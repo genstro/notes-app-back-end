@@ -9,7 +9,7 @@ const init = async () => {
   const server = Hapi.server({
     port: 5000,
     // eslint-disable-next-line linebreak-style
-    host: 'localhost',
+    host: process.env.NODE_eNV !== 'production' ? 'localhost' : '0.0.0.0',
     routes: {
       cors: {
         origin: ['*'],
